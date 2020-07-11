@@ -22,6 +22,7 @@ int main(void)
     a=0;
     ave=0;
     var=0;
+    square_ave=0;
 
     printf("input the filename of sample:");
     fgets(fname,sizeof(fname),stdin);
@@ -39,6 +40,7 @@ int main(void)
     {
         sscanf(buf,"%lf",&val);
         a++;
+        square_ave=ave_online(square_ave,pow(val,2),a);
         var=var_online(val,ave,square_ave,a);
         ave=ave_online(ave,val,a);
     }
@@ -49,8 +51,8 @@ int main(void)
     var2=a*var/(a-1);
     
     printf("sample mean=%lf\n",ave);
-    printf("sample variance=%lf\n",ave);
-    printf("population mean=%lf\n",ave);
+    printf("sample variance=%lf\n",var);
+    printf("population mean=%lf\n",ave2);
     printf("population variance=%lf",var2);
 
     return 0;
