@@ -9,12 +9,12 @@ extern double ave_online(double ave,double val,int a)
 }
 extern double var_online(double val,double ave,double square_ave,int a)
 {
-    return((((a-1)*square_ave)/a+pow(val,2)/a)-pow((((a-1)*ave)/a)+val/a,2));
+    return(((a-1)*square_ave/a+pow(val,2)/a)-pow(((a-1)*ave/a)+val/a,2));
 }
 
 int main(void)
 {
-    double val,ave,var,square_ave,ave2,var2;
+    double val,ave,var,square_ave,ave2,ave3,var2,gosa;
     char fname[FILENAME_MAX];
     char buf[256];
     FILE* fp;
@@ -49,10 +49,12 @@ int main(void)
         exit(EXIT_FAILURE);
     }
     var2=a*var/(a-1);
-    
+    gosa=sqrt(var2/a);
+    ave2=ave+gosa;
+    ave3=ave-gosa;
     printf("sample mean=%lf\n",ave);
     printf("sample variance=%lf\n",var);
-    printf("population mean=%lf\n",ave2);
+    printf("population mean=%lf\n",ave2 ,ave3);
     printf("population variance=%lf",var2);
 
     return 0;
