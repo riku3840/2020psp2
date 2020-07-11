@@ -51,7 +51,7 @@ int main(void)
     var2=a*var/(a-1);
     
     printf("sample mean=%lf\n",ave);
-    printf("sample variance=%lf\n",var);
+    printf("sample variance=%lf\n",ave);
     printf("population mean=%lf\n",ave2);
     printf("population variance=%lf",var2);
 
