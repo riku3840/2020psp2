@@ -9,7 +9,7 @@ extern double ave_online(double ave,double val,int a)
 }
 extern double var_online(double val,double ave,double square_ave,int a)
 {
-    return((((a-1)*square_ave/a)+pow(val,2)/a)-pow(((a-1)*ave/a)+val/a,2));
+    return((((a-1)*square_ave)/a+pow(val,2)/a)-pow((((a-1)*ave)/a)+val/a,2));
 }
 
 int main(void)
