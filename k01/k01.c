@@ -54,7 +54,7 @@ int main(void)
     ave3=ave-gosa;
     printf("sample mean=%lf\n",ave);
     printf("sample variance=%lf\n",var);
-    printf("population mean=%lf\n",ave2 ,ave3);
+    printf("population mean=%lf\n%lf\n",ave2 ,ave3);
     printf("population variance=%lf",var2);
 
     return 0;
