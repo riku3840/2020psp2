@@ -42,18 +42,22 @@ aa83988848 薗田光太郎
 |母集団分散|<img src="/k01/tex/35ae058b877f36e7384685a2e19cb7e4.svg?invert_in_darkmode&sanitize=true" align=middle width=37.44306224999999pt height=21.18721440000001pt/>|
 
 ## ソースコードの説明
-
-あいうえお
+6~9 平均の関数
+10~13 分散の関数
+40~46 平均と分散の計算
+51 不偏分散の算出
+52 標準誤差の算出
+53.54　母平均
 
 ## 入出力結果
 
 ```
 input the filename of sample:../sample/heights_male.csv
 the filename of sample: ../sample/heights_male.csv
-sample mean：
-sample variance：
-population mean (estimated)：
-population variance (estimated)：
+sample mean：173.888750
+sample variance：23.042120
+population mean (estimated)：175.703063   172.074437
+population variance (estimated)：26.333852
 ```
 
 ## 修正履歴
