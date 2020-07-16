@@ -55,9 +55,9 @@ aa83988848 薗田光太郎
 input the filename of sample:../sample/heights_male.csv
 the filename of sample: ../sample/heights_male.csv
 sample mean：173.888750
-sample variance：23.042120
-population mean (estimated)：175.703063   172.074437
-population variance (estimated)：26.333852
+sample variance：25.361711
+population mean (estimated)：171.985305~175.792195
+population variance (estimated)：28.984812
 ```
 
 ## 修正履
