@@ -64,3 +64,7 @@ population variance (estimated)：28.984812
 varを出すところで一個前の平均と二条の平均を使わないといけないのに新しい平均と二条の平均を使っていたのでvarをaveとsquare_aveのまえにおきました。
 
 説明は「かきくけこ」だ！
+
+[comment #20200714]
+- sample meanとpopulation meanの答えは正しく出力されていますが、sample varienceとpopulation varienceは間違っています。
+- 12行目の((a-1)*square_ave/a+pow(val,2)/a)は43行目で、((a-1)*ave/a)+val/aは44行目で既に行っているのでこのままだと二重で計算されてしまいます。ですので、12行目の式はより簡単に表すことができます。
