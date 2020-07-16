@@ -60,6 +60,7 @@ population mean (estimated)：175.703063   172.074437
 population variance (estimated)：26.333852
 ```
 
-## 修正履歴
+## 修正履
+varを出すところで一個前の平均と二条の平均を使わないといけないのに新しい平均と二条の平均を使っていたのでvarをaveとsquare_aveのまえにおきました。
 
 説明は「かきくけこ」だ！
