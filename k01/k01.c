@@ -9,7 +9,7 @@ extern double ave_online(double ave,double val,int a)
 }
 extern double var_online(double ave,double square_ave,int a)
 {
-    return(((square_ave)-pow(ave,2))/a);
+    return((square_ave-pow(ave,2))/a);
 }
 
 int main(void)
@@ -40,9 +40,9 @@ int main(void)
     {
         sscanf(buf,"%lf",&val);
         a++;
-        var=var_online(ave,square_ave,a);
         square_ave=ave_online(square_ave,pow(val,2),a);
         ave=ave_online(ave,val,a);
+        var=var_online(ave,square_ave,a);
     }
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
