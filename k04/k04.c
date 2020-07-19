@@ -11,7 +11,7 @@ int main(void)
     double val,id,ID;
     char fname1[FILENAME_MAX];
     char fname2[FILENAME_MAX];
-    FILE *fp1,*fp2;
+    FILE* fp1,*fp2;
     char buf1[256];
     char buf2[256];
     struct DATE date[14];
