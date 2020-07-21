@@ -90,6 +90,7 @@ Num of dummy data: 5
 ```
 
 コンパイル時に`-DCONST_SEED`をつけない場合を以下に示す．
+```
 ====================================================
 template mean:170.8
 template standard deviation:5.43
@@ -100,8 +101,10 @@ Num of dummy:5
 166.23
 179.38
 165.07
-
+```
 
 
 ## 修正履歴
 
+[comment #20200721 sonoda]
+- OKです．
