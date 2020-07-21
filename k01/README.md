@@ -42,11 +42,17 @@ aa83988848 薗田光太郎
 |母集団分散|<img src="/k01/tex/35ae058b877f36e7384685a2e19cb7e4.svg?invert_in_darkmode&sanitize=true" align=middle width=37.44306224999999pt height=21.18721440000001pt/>|
 
 ## ソースコードの説明
+
 6~9 平均の関数
+
 10~13 分散の関数
+
 40~46 平均と分散の計算
+
 51 不偏分散の算出
+
 52 標準誤差の算出
+
 53.54　母平均
 
 ## 入出力結果
@@ -61,11 +67,19 @@ population variance (estimated)：28.984812
 ```
 
 ## 修正履
+[comment #20200721 sonoda]
+main関数でave_online, var_onlineなどの自作の関数を使う場合は，main関数の前に，関数本体か，関数のプロトタイプ宣言がなければ警告が出ます．
+今，関数本体をmain関数のあとに置いているので，そのプロトタイプ宣言をmain関数の前に置きます．
+```
+extern double ave_online((double ave,double val,int i);
+```
+のようなかんじです．
+
+[revision]
+
 varを出すところで一個前の平均と二条の平均を使わないといけないのに新しい平均と二条の平均を使っていたのでvarをaveとsquare_aveのまえにおきました。
 
 int aをint iに変えました
-
-説明は「かきくけこ」だ！
 
 [comment #20200714]
 - sample meanとpopulation meanの答えは正しく出力されていますが、sample varienceとpopulation varienceは間違っています。
