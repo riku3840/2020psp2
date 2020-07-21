@@ -3,13 +3,13 @@
 #include <string.h>
 #include <math.h>
 
-extern double ave_online(double ave,double val,int a)
+extern double ave_online(double ave,double val,int i)
 {
-    return(((a-1)*ave)/a + val/a);
+    return(((i-1)*ave)/i + val/i);
 }
-extern double var_online(double ave,double square_ave,int a,double val)
+extern double var_online(double ave,double square_ave,int i,double val)
 {
-    return((a-1)*square_ave/a+pow(val,2)/a-pow((a-1)*ave/a+val/a,2));
+    return((i-1)*square_ave/i+pow(val,2)/i-pow((i-1)*ave/i+val/i,2));
 }
 
 int main(void)
@@ -18,8 +18,8 @@ int main(void)
     char fname[FILENAME_MAX];
     char buf[256];
     FILE* fp;
-    int a;
-    a=0;
+    int i;
+    i=0;
     ave=0;
     var=0;
     square_ave=0;
@@ -39,17 +39,17 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL)
     {
         sscanf(buf,"%lf",&val);
-        a++;
-        var=var_online(ave,square_ave,a,val);
-        square_ave=ave_online(square_ave,pow(val,2),a);
-        ave=ave_online(ave,val,a);
+        i++;
+        var=var_online(ave,square_ave,i,val);
+        square_ave=ave_online(square_ave,pow(val,2),i);
+        ave=ave_online(ave,val,i);
     }
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
         exit(EXIT_FAILURE);
     }
-    var2=a*var/(a-1);
-    gosa=sqrt(var2/a);
+    var2=i*var/(i-1);
+    gosa=sqrt(var2/i);
     ave2=ave+gosa;
     ave3=ave-gosa;
     printf("sample mean=%lf\n",ave);

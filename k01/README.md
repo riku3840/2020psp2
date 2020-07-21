@@ -63,6 +63,8 @@ population variance (estimated)：28.984812
 ## 修正履
 varを出すところで一個前の平均と二条の平均を使わないといけないのに新しい平均と二条の平均を使っていたのでvarをaveとsquare_aveのまえにおきました。
 
+int aをint iに変えました
+
 説明は「かきくけこ」だ！
 
 [comment #20200714]
