@@ -52,3 +52,14 @@ No data
 
 ## 修正履歴
 
+[comment #20200721 sonoda]
+- `IDs.csv`と`heights.csv`は直接開くと読めるので読んでみてください．`IDs.csv`は1行目からデータが書かれていますが，`heights.csv`は1行目には項目の説明（1列目は性別で2列目は身長，というような）が書かれています．つまり行数が異なっているし，`heights.csv`の1行目は読み飛ばさないと`i`が双方で合致しません．注意すること
+- 42行目のsscanfは
+  ```
+  sscanf(buf1,"%d""%lf",&gender,&val);
+  ```
+  ではなく
+  ```
+  sscanf(buf1,"%d, %lf",&gender,&val);
+  ```
+  という書き方です．
