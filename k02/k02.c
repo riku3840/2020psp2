@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#define U_A=170.8
+#define U_B=169.7
+#define SIGMA_A=5.43
+#define SIGMA_B=5.5
 
 extern double p_stdnorm(double z);
 
@@ -12,10 +16,10 @@ int main(void)
     char buf[256];
     FILE* fp;
     double L_a=1,L_b=1;
-    u_a=170.8;
-    u_b=169.7;
-    sigma_a=5.43;
-    sigma_b=5.5;
+    u_a=U_A;
+    u_b=U_B;
+    sigma_a=SIGMA_A;
+    sigma_b=SIGMA_B;
 
     printf("input the filename of sample:");
     fgets(fname,sizeof(fname),stdin);
