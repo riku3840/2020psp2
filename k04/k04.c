@@ -36,7 +36,7 @@ int main(void)
         fputs("File open error\n",stderr);
         exit(EXIT_FAILURE);
     }
-    i=1;
+    i=-1;
     n=0;
      while(fgets(buf1,sizeof(buf1),fp1) != NULL)
      {
@@ -46,7 +46,7 @@ int main(void)
         i++;
         n++;
      }
-     i=1;
+     i=0;
      while(fgets(buf2,sizeof(buf2),fp2) != NULL)
      {
         sscanf(buf2,"%lf",&id);
@@ -76,7 +76,7 @@ int main(void)
      }    
     if(x==0)
     {
-        printf("No date");
+        printf("No date\n");
     }
     printf("---");
 }
