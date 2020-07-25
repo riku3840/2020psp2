@@ -60,8 +60,8 @@ int main(void)
      {
          if(date[i].ID==ID)
          {   
-             printf("ID:%.0lf",date[i].ID);
-             printf("gender");
+             printf("ID:%.0lf\n",date[i].ID);
+             printf("gender:");
              if(date[i].gender==1)
              {
                 printf("male\n");
