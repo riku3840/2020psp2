@@ -36,16 +36,17 @@ int main(void)
         fputs("File open error\n",stderr);
         exit(EXIT_FAILURE);
     }
-    
+    i=1;
+    n=0;
      while(fgets(buf1,sizeof(buf1),fp1) != NULL)
      {
-        sscanf(buf1,"%d""%lf",&gender,&val);
+        sscanf(buf1,"%d,%lf",&gender,&val);
         date[i].gender=gender;
         date[i].height=val;
         i++;
         n++;
      }
-     i=0;
+     i=1;
      while(fgets(buf2,sizeof(buf2),fp2) != NULL)
      {
         sscanf(buf2,"%lf",&id);
