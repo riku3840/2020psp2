@@ -66,21 +66,16 @@ population mean (estimated)：171.985305~175.792195
 population variance (estimated)：28.984812
 ```
 
-## 修正履
-[comment #20200721 sonoda]
-main関数でave_online, var_onlineなどの自作の関数を使う場合は，main関数の前に，関数本体か，関数のプロトタイプ宣言がなければ警告が出ます．
-今，関数本体をmain関数のあとに置いているので，そのプロトタイプ宣言をmain関数の前に置きます．
-```
-extern double ave_online((double ave,double val,int i);
-```
-のようなかんじです．
-
-[revision]
-
-varを出すところで一個前の平均と二条の平均を使わないといけないのに新しい平均と二条の平均を使っていたのでvarをaveとsquare_aveのまえにおきました。
-
-int aをint iに変えました
+## 修正履歴
 
 [comment #20200714]
 - sample meanとpopulation meanの答えは正しく出力されていますが、sample varienceとpopulation varienceは間違っています。
 - 12行目の((a-1)*square_ave/a+pow(val,2)/a)は43行目で、((a-1)*ave/a)+val/aは44行目で既に行っているのでこのままだと二重で計算されてしまいます。ですので、12行目の式はより簡単に表すことができます。
+
+[comment #20200720 sonoda]
+- 基本的には，関数にexternはつけません．
+  - main関数より後ろに関数の本体を置き，関数の1行目の「出力型　関数名（入力型　入力変数．．．）」の行だけをmain関数の前に置いたもの（これをプロトタイプ宣言という）にはexternをつけます．
+- `a`という変数の名前は何だかよくわからないので辞めましょう．意味を持った名前にしましょう．
+
+[comment #20200721]
+- 自分からのアドバイス、修正はありませんが、薗田先生のアドバイスをもとに修正をお願いします。
