@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+extern double ave_online(double ave,double val,int i)
+{
+    return(((i-1)*ave)/i + val/i);
+}
+extern double var_online(double ave,double square_ave,int i,double val)
+{
+    return((i-1)*square_ave/i+pow(val,2)/i-pow((i-1)*ave/i+val/i,2));
+}
 
 
 int main(void)
@@ -52,14 +60,6 @@ int main(void)
     return 0;
 
 
-}
-double ave_online(double ave,double val,int i)
-{
-    return(((i-1)*ave)/i + val/i);
-}
-double var_online(double ave,double square_ave,int i,double val)
-{
-    return((i-1)*square_ave/i+pow(val,2)/i-pow((i-1)*ave/i+val/i,2));
 }
 
 

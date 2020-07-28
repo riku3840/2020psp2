@@ -63,3 +63,6 @@ No data
   sscanf(buf1,"%d, %lf",&gender,&val);
   ```
   という書き方です．
+
+[comment #20200720 sonoda]
+- OKです．課題4の完了を確認しました．

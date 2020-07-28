@@ -36,10 +36,11 @@ int main(void)
         fputs("File open error\n",stderr);
         exit(EXIT_FAILURE);
     }
-    
+    i=-1;
+    n=0;
      while(fgets(buf1,sizeof(buf1),fp1) != NULL)
      {
-        sscanf(buf1,"%d""%lf",&gender,&val);
+        sscanf(buf1,"%d,%lf",&gender,&val);
         date[i].gender=gender;
         date[i].height=val;
         i++;
@@ -59,8 +60,8 @@ int main(void)
      {
          if(date[i].ID==ID)
          {   
-             printf("ID:%.0lf",date[i].ID);
-             printf("gender");
+             printf("ID:%.0lf\n",date[i].ID);
+             printf("gender:");
              if(date[i].gender==1)
              {
                 printf("male\n");
@@ -75,7 +76,7 @@ int main(void)
      }    
     if(x==0)
     {
-        printf("No date");
+        printf("No date\n");
     }
     printf("---");
 }
