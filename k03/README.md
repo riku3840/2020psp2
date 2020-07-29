@@ -106,5 +106,6 @@ Num of dummy:5
 
 ## 修正履歴
 
-[comment #20200721 sonoda]
+[comment #20200720 sonoda]
 - OKです．
+- 課題3の完了を確認しました．（薗田）
